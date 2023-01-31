@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table</title>
+    <style>
+      tr {
+        color: palevioletred;
+        background-color: aliceblue;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      function createTable(row, col) {
+        let table = document.createElement("table"); // створюємо таблицю
+        for (let i = 0; i < row; i++) {
+         let table_tr = document.createElement("tr");
+          for (let j = 0; j < col; j++) {
+            let table_td = document.createElement("td");
+            let table_tr_number = document.createTextNode( // заповнюємо числами
+              Math.floor(Math.random() * 100)
+            );
+            table_td.appendChild(table_tr_number); 
+            table_tr.appendChild(table_td); 
+          }
+          table.appendChild(table_tr); // додаємо до таблиці дані
+        }
+        document.body.appendChild(table); 
+      }
+      createTable(10, 10);
+    </script>
+  </body>
+</html>

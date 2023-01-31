@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Div - привид</title>
+    <style>
+      .present {
+        background-color:beige ;
+        color:chocolate;
+        font-size: 20px;
+        display: block;
+        width: 50%;
+        text-align: center;
+      }
+      .missing {
+        display: none;
+      }
+      #text-box {
+        color: palevioletred;
+        background-color:aliceblue;
+        cursor: pointer;
+        width: 50%;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="text-box">
+      Є текстове поле на сторінці. Під час фокусування на цьому полі збоку
+      з'явиться "div"
+    </p>
+    <div id="div" class="missing">
+      При пропажі фокусу - "div" пропаде
+    </div>
+    <script>
+      let paragraf = document.getElementById("text-box");
+      let block = document.getElementById("div");
+      paragraf.addEventListener("mousemove", () => {
+        block.classList.toggle("missing");
+        block.classList.toggle("present");
+      });
+    </script>
+  </body>
+</html>
